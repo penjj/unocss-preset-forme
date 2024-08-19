@@ -1,0 +1,42 @@
+{
+  "name": "@unocss-preset-forme/monorepo",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "prepare": "simple-git-hooks",
+    "dev": "pnpm --filter=playground dev",
+    "build": "pnpm build -w",
+    "test": "vitest",
+    "format:unsafe": "biome check --apply-unsafe ."
+  },
+  "dependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@penjj/biome-config": "^0.4.0",
+    "@penjj/tsconfig": "^0.4.0",
+    "lint-staged": "^15.2.9",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.5.4",
+    "unbuild": "^2.0.0",
+    "vitest": "^2.0.5",
+    "vue-commitlint": "^0.1.0"
+  },
+  "packageManager": "pnpm@9.5.0",
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "pnpm vue-commitlint"
+  },
+  "lint-staged": {
+    "*": [
+      "biome format --write",
+      "biome check --apply",
+      "biome ci"
+    ]
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

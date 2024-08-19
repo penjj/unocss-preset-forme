@@ -1,0 +1,31 @@
+{
+  "name": "unocss-preset-forme",
+  "version": "0.0.1-alpha.1",
+  "type": "module",
+  "license": "MIT",
+  "author": "penjj<https://github.com/penjj>",
+  "homepage": "https://github.com/penjj/unocss-preset-forme",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0"
+  },
+  "peerDependencies": {
+    "unocss": ">=0.60.0",
+    "unocss-preset-animations": ">=1.1.0",
+    "@unocss/preset-rem-to-px": ">=0.60.0",
+    "@unocss/reset": ">=0.60.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
