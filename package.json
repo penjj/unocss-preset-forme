@@ -9,9 +9,10 @@
   "scripts": {
     "prepare": "simple-git-hooks",
     "dev": "pnpm --filter=playground dev",
-    "build": "pnpm build -w",
+    "build": "pnpm -r build",
     "test": "vitest",
-    "format:unsafe": "biome check --apply-unsafe ."
+    "format:unsafe": "biome check --apply-unsafe .",
+    "release": "bumpp -r"
   },
   "dependencies": {
     "@biomejs/biome": "^1.8.3",
@@ -30,13 +31,13 @@
     "commit-msg": "pnpm vue-commitlint"
   },
   "lint-staged": {
-    "*": [
-      "biome format --write",
-      "biome check --apply",
-      "biome ci"
-    ]
+    "*": ["biome format --write", "biome check --apply", "biome ci"]
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "devDependencies": {
+    "bumpp": "^9.5.1"
+  },
+  "version": "0.0.1"
 }

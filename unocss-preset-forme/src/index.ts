@@ -63,3 +63,8 @@ function flattenToObj(flatShortcuts: [string, string][]) {
   })
   return shortcuts
 }
+
+export {
+  Options as PresetFormeOptions,
+  presetForme as default,
+}
