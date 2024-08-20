@@ -1,6 +1,5 @@
 // Sanitize 配置项
-
-import { PresetAnimationsOptions } from 'unocss-preset-animations'
+import type { PresetAnimationsOptions } from 'unocss-preset-animations'
 
 // @see https://github.com/csstools/sanitize.css
 export interface SanitizeOptions {

@@ -1,11 +1,11 @@
 import {
+  type Preset,
+  type StaticShortcutMap,
   definePreset,
   presetUno,
-  type StaticShortcutMap,
-  type Preset,
 } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
-import { type Options } from './types'
+import type { Options } from './types'
 import { resolveResetCSS } from './utils'
 
 function resolvePresets(options: Options) {
@@ -53,18 +53,15 @@ export const presetForme = definePreset<Options>((options = {}) => {
 })
 
 function mergeShortcuts(...objects: StaticShortcutMap[]) {
-  return objects.reduce((prev, current) => ({ ...prev, ...current }), {})
+  return objects.reduce((prev, current) => Object.assign({}, prev, current), {})
 }
 
 function flattenToObj(flatShortcuts: [string, string][]) {
   const shortcuts: StaticShortcutMap = {}
-  flatShortcuts.forEach(([name, value]) => {
+  for (const [name, value] of flatShortcuts) {
     shortcuts[name] = value
-  })
+  }
   return shortcuts
 }
 
-export {
-  Options as PresetFormeOptions,
-  presetForme as default,
-}
+export { type Options as PresetFormeOptions, presetForme as default }
