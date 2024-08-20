@@ -1,3 +1,4 @@
 packages:
   - unocss-preset-forme
   - playground
+  - unocss-attributify

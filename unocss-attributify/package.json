@@ -1,0 +1,12 @@
+{
+  "name": "@penjj/unocss-attributify",
+  "version": "0.0.1",
+  "type": "module",
+  "files": ["solid.d.ts", "react.d.ts", "astro.d.ts", "vue.d.ts"],
+  "exports": {
+    "./*": "./*"
+  },
+  "peerDependencies": {
+    "@unocss/preset-attributify": ">=0.60.0"
+  }
+}

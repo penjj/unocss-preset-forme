@@ -22,7 +22,6 @@
   "peerDependencies": {
     "unocss": ">=0.60.0",
     "unocss-preset-animations": ">=1.1.0",
-    "@unocss/preset-rem-to-px": ">=0.60.0",
     "@unocss/reset": ">=0.60.0"
   },
   "engines": {
